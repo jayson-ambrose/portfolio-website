@@ -10,7 +10,7 @@ function Nav () {
     const { activeItem } = menuSelection
 
     return(
-        <Menu widths={3}>
+        <Menu className='nav' inverted color='blue' widths={3}>
             <Menu.Item
                 as={ Link }
                 to='/welcome'
@@ -18,7 +18,7 @@ function Nav () {
                 active={activeItem === 'welcome'}
                 onClick={handleItemClick}
             >
-                Welcome
+                <strong>Welcome</strong>
             </Menu.Item>
             <Menu.Item
                 as={ Link }
@@ -27,7 +27,7 @@ function Nav () {
                 active={activeItem === 'projects'}
                 onClick={handleItemClick}
             >
-                Projects
+                <strong>Projects</strong>
             </Menu.Item>
             <Menu.Item
                 name='contact'
@@ -36,7 +36,7 @@ function Nav () {
                 active={activeItem === 'contact'}
                 onClick={handleItemClick}
             >
-                Contact Me
+                <strong>Contact Me</strong>
             </Menu.Item>
         </Menu>
     )
