@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;700&display=swap');
+
+.headLine {
+  padding: 20px;
+  padding-bottom: 0px;
+  font-family: 'Zilla Slab', serif;
+  font-weight: 700;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
