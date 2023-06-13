@@ -9,6 +9,7 @@ function ContactMe () {
             <p> jayson-ambrose on Discord</p>
             <h2 className='headLine'> Links </h2>
             <a href='https://www.linkedin.com/in/jayson-ambrose/' rel="noreferrer" target='_blank'> LinkedIn </a>
+            <a href='https://docs.google.com/document/d/157Q1enWaPZA9uUVO5ZiTGQQ9ptkIQirL/edit?usp=sharing&ouid=106558837296981213088&rtpof=true&sd=true' rel="noreferrer" target='_blank'> Resume </a>
             <a href='https://github.com/jayson-ambrose/' rel="noreferrer" target='_blank'> GitHub </a>
             <a href='https://medium.com/@jayson.ambrose.87' rel="noreferrer" target='_blank'> Medium </a>
         </div>
