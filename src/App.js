@@ -19,10 +19,10 @@ function App() {
       <h2 className='headLine'>Jayson Ambrose, Full-Stack Software Engineer</h2>
       <Nav />
       <Routes>
-        <Route exact path='/' element={null}/>
-        <Route exact path='/welcome' element={<Welcome/>}/>
-        <Route exact path='/projects' element={<Projects/>}/>
-        <Route exact path='/contact' element={<ContactMe/>}/>
+        <Route path='/' element={null}/>
+        <Route path='/welcome' element={<Welcome/>}/>
+        <Route path='/projects' element={<Projects/>}/>
+        <Route path='/contact' element={<ContactMe/>}/>
       </Routes>      
     </div>
   );
