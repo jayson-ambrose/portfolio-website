@@ -18,7 +18,7 @@ function Nav () {
                 active={activeItem === 'welcome'}
                 onClick={handleItemClick}
             >
-                <strong>Welcome</strong>
+                <b>Welcome</b>
             </Menu.Item>
             <Menu.Item
                 as={ Link }
@@ -27,7 +27,7 @@ function Nav () {
                 active={activeItem === 'projects'}
                 onClick={handleItemClick}
             >
-                <strong>Projects</strong>
+                <b>Projects</b>
             </Menu.Item>
             <Menu.Item
                 name='contact'
@@ -36,7 +36,7 @@ function Nav () {
                 active={activeItem === 'contact'}
                 onClick={handleItemClick}
             >
-                <strong>Contact Me</strong>
+                <b>Contact Me</b>
             </Menu.Item>
         </Menu>
     )
