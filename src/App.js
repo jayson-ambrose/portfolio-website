@@ -19,10 +19,10 @@ function App() {
       <h2 className='headLine'>Jayson Ambrose, Full-Stack Software Engineer</h2>
       <Nav />
       <Routes>
-        <Route path='/' element={null}/>
-        <Route path='/welcome' element={<Welcome/>}/>
-        <Route path='/projects' element={<Projects/>}/>
-        <Route path='/contact' element={<ContactMe/>}/>
+        <Route path='portfolio-website/' element={null}/>
+        <Route path='portfolio-website/welcome' element={<Welcome/>}/>
+        <Route path='portfolio-website/projects' element={<Projects/>}/>
+        <Route path='portfolio-website/contact' element={<ContactMe/>}/>
       </Routes>      
     </div>
   );

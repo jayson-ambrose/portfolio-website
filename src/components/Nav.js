@@ -13,7 +13,7 @@ function Nav () {
         <Menu className='nav' inverted color='blue' widths={3}>
             <Menu.Item
                 as={ Link }
-                to='/welcome'
+                to='portfolio-website/welcome'
                 name='welcome'
                 active={activeItem === 'welcome'}
                 onClick={handleItemClick}
@@ -22,7 +22,7 @@ function Nav () {
             </Menu.Item>
             <Menu.Item
                 as={ Link }
-                to='/projects'
+                to='portfolio-website/projects'
                 name='projects'
                 active={activeItem === 'projects'}
                 onClick={handleItemClick}
@@ -32,7 +32,7 @@ function Nav () {
             <Menu.Item
                 name='contact'
                 as={ Link }
-                to='/contact'
+                to='portfolio-website/contact'
                 active={activeItem === 'contact'}
                 onClick={handleItemClick}
             >
