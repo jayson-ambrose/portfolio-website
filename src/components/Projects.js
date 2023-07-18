@@ -25,8 +25,8 @@ function Projects () {
                     </Table.Row>
                     <Table.Row>
                         <Table.Cell>Obsidian's Vault</Table.Cell>
-                        <Table.Cell>React front-end, Python and Flask backend, Semantic UI styling. Website for the collectable card game "Obsidian's Vault".</Table.Cell>
-                        <Table.Cell>WIP</Table.Cell>
+                        <Table.Cell>React front-end, Python and Flask backend, Semantic UI styling. Website for the collectable card game "Obsidian's Vault" (work in progress.)</Table.Cell>
+                        <Table.Cell><a href='https://youtu.be/tRy015T2rWk' rel="noreferrer" target='_blank'>Demo</a></Table.Cell>
                     </Table.Row>
                     <Table.Row>
                         <Table.Cell>Froth Finder</Table.Cell>
