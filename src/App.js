@@ -23,6 +23,7 @@ function App() {
         <Route exact path='/welcome' element={<Welcome/>}/>
         <Route exact path='/projects' element={<Projects/>}/>
         <Route exact path='/contact' element={<ContactMe/>}/>
+        <Route exact path='/contact' element={<ContactMe/>}/>
       </Routes>      
     </div>
   );

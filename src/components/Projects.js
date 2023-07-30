@@ -14,29 +14,29 @@ function Projects () {
                     <Table.Row>
                         <Table.HeaderCell>Project Name</Table.HeaderCell>
                         <Table.HeaderCell>Description</Table.HeaderCell>
-                        <Table.HeaderCell>Demo</Table.HeaderCell>
+                        <Table.HeaderCell>Demo/Github</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 <Table.Body>
                     <Table.Row>
                         <Table.Cell>Backlogger Books</Table.Cell>
                         <Table.Cell>React Native mobile application for avid readers to track books they would like to read and leave reviews for other users.</Table.Cell>
-                        <Table.Cell><a href='https://youtu.be/N-Xg1JWFHL0' rel="noreferrer" target='_blank'>Demo</a></Table.Cell>
+                        <Table.Cell><a href='https://youtu.be/N-Xg1JWFHL0' rel="noreferrer" target='_blank'>Demo</a>|<a href='https://github.com/jayson-ambrose/backlogger-books' rel="noreferrer" target='_blank'>Github</a></Table.Cell>
                     </Table.Row>
                     <Table.Row>
                         <Table.Cell>Obsidian's Vault</Table.Cell>
-                        <Table.Cell>React front-end, Python and Flask backend, Semantic UI styling. Website for the collectable card game "Obsidian's Vault" (work in progress.)</Table.Cell>
-                        <Table.Cell><a href='https://youtu.be/tRy015T2rWk' rel="noreferrer" target='_blank'>Demo</a></Table.Cell>
+                        <Table.Cell>React front-end, Python and Flask backend, Semantic UI styling. Website for the collectable card game "Obsidian's Vault" (work in progress.)n</Table.Cell>
+                        <Table.Cell><a href='https://youtu.be/tRy015T2rWk' rel="noreferrer" target='_blank'>Demo</a>|<a href='https://github.com/jayson-ambrose/obsidians-vault' rel="noreferrer" target='_blank'>Github</a></Table.Cell>
                     </Table.Row>
                     <Table.Row>
                         <Table.Cell>Froth Finder</Table.Cell>
                         <Table.Cell>A single page web application for beer enthusiasts to find thier next favorite brewery.</Table.Cell>
-                        <Table.Cell><a href='https://youtu.be/VXc9z3k-BvY' rel="noreferrer" target='_blank'>Demo</a></Table.Cell>
+                        <Table.Cell><a href='https://youtu.be/VXc9z3k-BvY' rel="noreferrer" target='_blank'>Demo</a>|<a href='https://github.com/jayson-ambrose/frothfinder-project' rel="noreferrer" target='_blank'>Github</a></Table.Cell>
                     </Table.Row>
                     <Table.Row>
                         <Table.Cell>Zen Trivia</Table.Cell>
                         <Table.Cell>Single page React application featuring a triva game and tools for companies to set up thier next trivia night.</Table.Cell>
-                        <Table.Cell><a href='https://youtu.be/BPkYcGz12dw' rel="noreferrer" target='_blank'>Demo</a></Table.Cell>
+                        <Table.Cell><a href='https://youtu.be/BPkYcGz12dw' rel="noreferrer" target='_blank'>Demo</a>|<a href='https://github.com/jayson-ambrose/react-trivia' rel="noreferrer" target='_blank'>Github</a></Table.Cell>
                     </Table.Row>
                 </Table.Body>
             </Table>
