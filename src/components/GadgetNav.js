@@ -59,10 +59,10 @@ export default function GadgetNav() {
                 </GridColumn>
                 <GridColumn stretched width={10}> 
                     <Routes>
-                        <Route path='gadgets/calculator' element={<CalculatorGadget/>}/>
-                        <Route path='gadgets/trivia' element={<TriviaGadget/>}/>
-                        <Route path='gadgets/brewery' element={<BreweryGadget/>}/>
-                        <Route path='gadgets/clock' element={<ClockGadget/>}/>
+                        <Route path='/calculator' element={<CalculatorGadget/>}/>
+                        <Route path='/trivia' element={<TriviaGadget/>}/>
+                        <Route path='/brewery' element={<BreweryGadget/>}/>
+                        <Route path='/clock' element={<ClockGadget/>}/>
                     </Routes>
                 </GridColumn>
                 <GridColumn width={2}/>
