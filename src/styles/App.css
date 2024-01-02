@@ -5,6 +5,7 @@
   padding-bottom: 0px;
   font-family: 'Zilla Slab', serif;
   font-weight: 700;
+  align-self: center;
 }
 
 .ui.menu.nav {
@@ -15,12 +16,10 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .routeContent {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 65rem;
 }

@@ -41,7 +41,7 @@ function Nav () {
             <Menu.Item
                 name='gadgets'
                 as={ Link }
-                to='/contact'
+                to='/gadgets'
                 active={activeItem === 'gadgets'}
                 onClick={handleItemClick}
             >

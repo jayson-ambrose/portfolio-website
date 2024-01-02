@@ -5,6 +5,11 @@ import { Routes, Route, useNavigate} from 'react-router-dom'
 import Welcome from './components/Welcome';
 import ContactMe from './components/ContactMe';
 import Projects from './components/Projects';
+import Gadgets from './components/Gadgets';
+import CalculatorGadget from './components/CalculatorGadget';
+import TriviaGadget from './components/TriviaGadget';
+import BreweryGadget from './components/BreweryGadget';
+import ClockGadget from './components/ClockGadget';
 
 function App() {
 
@@ -19,11 +24,13 @@ function App() {
       <h2 className='headLine'>Jayson Ambrose, Full-Stack Software Engineer</h2>
       <Nav />
       <Routes>
-        <Route exact path='/' element={null}/>
-        <Route exact path='/welcome' element={<Welcome/>}/>
-        <Route exact path='/projects' element={<Projects/>}/>
-        <Route exact path='/contact' element={<ContactMe/>}/>
-        <Route exact path='/contact' element={<ContactMe/>}/>
+        <Route path='/' element={null}/>
+        <Route path='/welcome' element={<Welcome/>}/>
+        <Route path='/projects' element={<Projects/>}/>
+        <Route path='/contact' element={<ContactMe/>}/>
+        <Route path='/gadgets/*' element={<Gadgets/>}>
+          
+        </Route>
       </Routes>      
     </div>
   );
