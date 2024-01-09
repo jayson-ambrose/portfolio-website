@@ -18,8 +18,7 @@
   flex-direction: column;
 }
 
-.ui.grid.calculatorGrid Button {
-  width: 80px;
+.ui.grid.calculatorGrid Button { 
   border: solid;
   margin: 10px;
 }

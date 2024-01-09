@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid, GridRow, GridColumn, Button } from "semantic-ui-react";
 
-export default function CalculatorKeypad ({ handleSetFirstNum, handleSetSecondNum }) {
+export default function CalculatorKeypad ({ handleSetFirstNum, handleSetSecondNum, displayValue }) {
 
     const handleButtonClicked = (btnVal) => {
 
@@ -10,14 +10,58 @@ export default function CalculatorKeypad ({ handleSetFirstNum, handleSetSecondNu
             case '-':
             case '*':
             case '/':
-                console.log(`operator ${btnVal} detected`)
+            case '%':
+                operatorSelected(btnVal)
                 break
             case '.' :
-                console.log('decimal point detected')
+                decimalSelected()
                 break
+            case 'bk' :
+                backspaceSelected()
+                break
+            case 'clr' : 
+                clearSelected()
+                break
+            case '=' :
+                equalsSelected()
+                break           
             default :
-                console.log(btnVal)
+                numberSelected(btnVal)
         }
+    }
+
+    const operatorSelected = (btnVal) => {
+        console.log(`operator ${btnVal} detected`)
+        //set first num and operator in state using display state.
+    }
+
+    const decimalSelected = () => {
+        console.log('decimal point detected')
+        //check if decimal present using display val then add one if not.
+    }
+
+    const backspaceSelected = () => {
+        console.log('backspace detected')
+        //pop the last number or decimal from the display value.
+        //if empty and on secondNum, remove operator and switch display back to firstNum
+    }
+
+    const clearSelected = () => {
+        console.log('clear detected')
+        //clear and reset the calculator
+    }
+
+    const equalsSelected = () => {
+        console.log('equals detected')
+        //solve
+        //if no secondNum entered, insert 0 and solve
+        //if no operator senterred, insert + 0 and solve
+        //if divide by 0 return ERROR
+    }
+
+    const numberSelected = (btnVal) => {
+        console.log(`number ${btnVal} detected`)
+        //add a number to the end of the firstNum or secondNum string.
     }
 
     return (

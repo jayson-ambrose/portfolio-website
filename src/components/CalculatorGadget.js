@@ -52,7 +52,9 @@ export default function CalculatorGadget() {
             <h2 className='headLine'> Calculator </h2>
             <CalculatorDisplay displayValue={displayValue}/>
             <CalculatorKeypad 
-                handleSetFirstNum={handleSetFirstNum}/>
+                handleSetFirstNum={handleSetFirstNum}
+                handleSetSecondNum={handleSetSecondNum}
+                displayValue={displayValue}/>
         </div>
     )
 }
