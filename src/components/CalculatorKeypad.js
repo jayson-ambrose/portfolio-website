@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, GridRow, GridColumn, Button } from "semantic-ui-react";
+import CalculatorButton from "./CalculatorButton";
 
 export default function CalculatorKeypad ({ handleSetFirstNum, handleSetSecondNum, displayValue }) {
 
@@ -69,33 +70,33 @@ export default function CalculatorKeypad ({ handleSetFirstNum, handleSetSecondNu
             <GridRow>
                 <GridColumn width={5}/>
                 <GridColumn width={1}>
-                    <Button onClick={() => handleButtonClicked('7')}>7</Button>
-                    <Button onClick={() => handleButtonClicked('4')}>4</Button>
-                    <Button onClick={() => handleButtonClicked('1')}>1</Button>
-                    <Button onClick={() => handleButtonClicked('0')}>0</Button>
+                    <CalculatorButton char={'7'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'4'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'1'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'0'} color={'blue'} handleClick={handleButtonClicked}/>
                 </GridColumn>
                 <GridColumn width={1}>
-                    <Button onClick={() => handleButtonClicked('8')}>8</Button>
-                    <Button onClick={() => handleButtonClicked('5')}>5</Button>
-                    <Button onClick={() => handleButtonClicked('2')}>2</Button>
+                    <CalculatorButton char={'8'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'5'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'2'} color={'blue'} handleClick={handleButtonClicked}/>
                 </GridColumn>
                 <GridColumn width={1}>
-                    <Button onClick={() => handleButtonClicked('9')}>9</Button>
-                    <Button onClick={() => handleButtonClicked('6')}>6</Button>
-                    <Button onClick={() => handleButtonClicked('3')}>3</Button>
-                    <Button onClick={() => handleButtonClicked('bk')}>&#10229;</Button>
+                    <CalculatorButton char={'9'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'6'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'3'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'bk'} color={'blue'} handleClick={handleButtonClicked}/>
                 </GridColumn>
                 <GridColumn width={1}>
-                    <Button onClick={() => handleButtonClicked('/')}>&divide;</Button>
-                    <Button onClick={() => handleButtonClicked('.')}>.</Button>
-                    <Button onClick={() => handleButtonClicked('%')}>%</Button>
-                    <Button onClick={() => handleButtonClicked('clr')}>C</Button>
+                    <CalculatorButton char={'/'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'.'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'%'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'C'} color={'blue'} handleClick={handleButtonClicked}/>
                 </GridColumn>
                 <GridColumn width={1}>
-                    <Button onClick={() => handleButtonClicked('+')}>+</Button>
-                    <Button onClick={() => handleButtonClicked('-')}>-</Button>
-                    <Button onClick={() => handleButtonClicked('*')}>x</Button>
-                    <Button onClick={() => handleButtonClicked('=')}>=</Button>
+                    <CalculatorButton char={'+'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'-'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'*'} color={'blue'} handleClick={handleButtonClicked}/>
+                    <CalculatorButton char={'='} color={'blue'} handleClick={handleButtonClicked}/>
                 </GridColumn>
             </GridRow>
         </Grid>
