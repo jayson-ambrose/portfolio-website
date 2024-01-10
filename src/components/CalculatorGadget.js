@@ -11,17 +11,33 @@ export default function CalculatorGadget() {
     const [operator, setOperator] = useState('')
     const [total, setTotal] = useState(0)
 
+    //JavaScript Number() method for these
+
     const addNums = () => setTotal(firstNum + secondNum)
     const subtractNums = () => setTotal(firstNum - secondNum)
     const multiplyNums = () => setTotal(firstNum * secondNum)
     const divideNums = () => setTotal(firstNum / secondNum)
+    const percentNums = () => {
+        return firstNum * (secondNum/100)
+    }
+
+    ////////////////////////
+
+    const handleClearDisplayValue = (val) => {
+        setDisplayValue('')
+        setFirstNum('')
+        setSecondNum('')
+        setOperator('')
+    }
 
     const handleSetDisplayValue = (val) => {
-        setDisplayValue(val)
+        setDisplayValue(displayValue + val)
     }
 
     const handleSetFirstNum = (val) => {
-        setFirstNum(val)
+        setFirstNum(displayValue)
+        setOperator(val)
+        setDisplayValue('')
     }
 
     const handleSetSecondNum = (val) => {
@@ -30,30 +46,43 @@ export default function CalculatorGadget() {
 
     const handleSetOperator = (val) => {
         setOperator(val)
+        setDisplayValue(displayValue + operator)
     }
 
     const handleCalculate = () => {
 
         if (operator === '+') {
-            setTotal(() => addNums())
+            addNums()
         } else if (operator === '-') {
-            setTotal(() => subtractNums())
+            subtractNums()
         } else if (operator === '*') {
-            setTotal(() => multiplyNums())
+            multiplyNums()
         } else if (operator === '/') {
-            setTotal(() => divideNums())
+            divideNums()
+        } else if (operator === '%') {
+            percentNums()
         }
 
         handleSetDisplayValue()
     }
 
+    console.log('operator state: ' + operator)
+
     return(
         <div className='routeContent'>
             <h2 className='headLine'> Calculator </h2>
-            <CalculatorDisplay displayValue={displayValue}/>
-            <CalculatorKeypad 
+            <CalculatorDisplay 
+                firstNum={firstNum}
+                secondNum={secondNum}
+                operator={operator}
+                displayValue={displayValue}/>
+            <CalculatorKeypad
+                handleSetDisplayValue={handleSetDisplayValue} 
                 handleSetFirstNum={handleSetFirstNum}
                 handleSetSecondNum={handleSetSecondNum}
+                handleClearDisplayValue={handleClearDisplayValue}
+                handleSetOperator={handleSetOperator}
+                handleCalculate={handleCalculate}
                 displayValue={displayValue}/>
         </div>
     )

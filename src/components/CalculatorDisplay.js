@@ -1,10 +1,11 @@
 import React from "react";
 
-export default function CalculatorDisplay() {
+export default function CalculatorDisplay({ displayValue, firstNum, secondNum, operator }) {
 
     return(
-        <div className="calculatorScreenContainer">
-            <h1 className="headLine">Total Goes Here</h1>
+        <div>
+            <p>{firstNum} {operator} {secondNum} </p>
+            <h1>{displayValue}</h1>
         </div>
     )
 }

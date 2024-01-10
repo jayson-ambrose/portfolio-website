@@ -1,14 +1,21 @@
 import React from "react";
 import { Button } from 'semantic-ui-react'
 
-export default function CalculatorButton ({ char, color='blue', styleClass, handleClick }) {
+export default function CalculatorButton ({ 
+    char, 
+    inverted=false,
+    color='blue', 
+    styleClass, 
+    handleClick, 
+    specialChar=null}) {
 
     const tacos = true
     
     return (
-        <Button          
+        <Button
+            inverted={inverted}          
             color={color} 
             className={styleClass}
-            onClick={() => handleClick(char)}>{char}</Button>
+            onClick={() => handleClick(char)}>{specialChar ? specialChar : char}</Button>
     )
 }
