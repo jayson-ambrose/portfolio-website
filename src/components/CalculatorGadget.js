@@ -6,17 +6,17 @@ export default function CalculatorGadget() {
 
     const [displayValue, setDisplayValue] = useState('')
 
-    const [firstNum, setFirstNum] = useState('')
-    const [secondNum, setSecondNum] = useState('')
+    const [firstNum, setFirstNum] = useState(0)
+    const [secondNum, setSecondNum] = useState(0)
     const [operator, setOperator] = useState('')
     const [total, setTotal] = useState(0)
 
     //JavaScript Number() method for these
 
-    const addNums = () => setTotal(firstNum + secondNum)
-    const subtractNums = () => setTotal(firstNum - secondNum)
-    const multiplyNums = () => setTotal(firstNum * secondNum)
-    const divideNums = () => setTotal(firstNum / secondNum)
+    const addNums = () => firstNum + secondNum
+    const subtractNums = () => firstNum - secondNum
+    const multiplyNums = () => firstNum * secondNum
+    const divideNums = () => firstNum / secondNum
     const percentNums = () => {
         return firstNum * (secondNum/100)
     }
@@ -35,13 +35,9 @@ export default function CalculatorGadget() {
     }
 
     const handleSetFirstNum = (val) => {
-        setFirstNum(displayValue)
+        setFirstNum(Number(displayValue))
         setOperator(val)
         setDisplayValue('')
-    }
-
-    const handleSetSecondNum = (val) => {
-        setSecondNum(val)
     }
 
     const handleSetOperator = (val) => {
@@ -51,19 +47,19 @@ export default function CalculatorGadget() {
 
     const handleCalculate = () => {
 
-        if (operator === '+') {
-            addNums()
-        } else if (operator === '-') {
-            subtractNums()
-        } else if (operator === '*') {
-            multiplyNums()
-        } else if (operator === '/') {
-            divideNums()
-        } else if (operator === '%') {
-            percentNums()
-        }
+        setSecondNum(() => Number(displayValue))
 
-        handleSetDisplayValue()
+        if (operator === '+') {
+            setDisplayValue(() => firstNum + secondNum)
+        } else if (operator === '-') {
+            setDisplayValue(() => firstNum - secondNum)
+        } else if (operator === '*') {
+            setDisplayValue(() => firstNum * secondNum)
+        } else if (operator === '/') {
+            setDisplayValue(() => firstNum / secondNum)
+        } else if (operator === '%') {
+            setDisplayValue(percentNums())
+        }
     }
 
     console.log('operator state: ' + operator)
@@ -79,7 +75,6 @@ export default function CalculatorGadget() {
             <CalculatorKeypad
                 handleSetDisplayValue={handleSetDisplayValue} 
                 handleSetFirstNum={handleSetFirstNum}
-                handleSetSecondNum={handleSetSecondNum}
                 handleClearDisplayValue={handleClearDisplayValue}
                 handleSetOperator={handleSetOperator}
                 handleCalculate={handleCalculate}

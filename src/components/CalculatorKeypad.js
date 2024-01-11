@@ -3,8 +3,7 @@ import { Grid, GridRow, GridColumn, Button } from "semantic-ui-react";
 import CalculatorButton from "./CalculatorButton";
 
 export default function CalculatorKeypad ({ 
-    handleSetFirstNum, 
-    handleSetSecondNum, 
+    handleSetFirstNum,
     displayValue, 
     handleSetDisplayValue,
     handleClearDisplayValue,
@@ -19,7 +18,8 @@ export default function CalculatorKeypad ({
             case '*':
             case '/':
             case '%':
-                operatorSelected(btnVal)
+                //set first num and operator in state using display state.
+                handleSetFirstNum(btnVal)
                 break
             case '.' :
                 decimalSelected()
@@ -31,19 +31,16 @@ export default function CalculatorKeypad ({
                 handleClearDisplayValue()
                 break
             case '=' :
-                equalsSelected()
+                handleCalculate()
+                //solve
+                //if no secondNum entered, insert 0 and solve
+                //if no operator senterred, insert + 0 and solve
+                //if divide by 0 return ERROR
                 break           
             default :
                 //adds number to display value
                 handleSetDisplayValue(btnVal)
         }
-    }
-
-    const operatorSelected = (btnVal) => {
-        console.log(`operator ${btnVal} detected`)
-
-        handleSetFirstNum(btnVal)
-        //set first num and operator in state using display state.
     }
 
     const decimalSelected = () => {
