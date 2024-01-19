@@ -8,7 +8,7 @@ export default function CalculatorKeypad ({
     handleSetDisplayValue,
     handleClearDisplayValue,
     handleSetOperator,
-    handleCalculate}) {
+    handleEquals}) {
 
     const handleButtonClicked = (btnVal) => {
 
@@ -31,7 +31,7 @@ export default function CalculatorKeypad ({
                 handleClearDisplayValue()
                 break
             case '=' :
-                handleCalculate()
+                handleEquals()
                 //solve
                 //if no secondNum entered, insert 0 and solve
                 //if no operator senterred, insert + 0 and solve

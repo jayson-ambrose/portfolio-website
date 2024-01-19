@@ -6,8 +6,8 @@ export default function CalculatorGadget() {
 
     const [displayValue, setDisplayValue] = useState('')
 
-    const [firstNum, setFirstNum] = useState(0)
-    const [secondNum, setSecondNum] = useState(0)
+    const [firstNum, setFirstNum] = useState('')
+    const [secondNum, setSecondNum] = useState('')
     const [operator, setOperator] = useState('')
     const [total, setTotal] = useState(0)
 
@@ -17,8 +17,8 @@ export default function CalculatorGadget() {
     const subtractNums = () => firstNum - secondNum
     const multiplyNums = () => firstNum * secondNum
     const divideNums = () => firstNum / secondNum
-    const percentNums = () => {
-        return firstNum * (secondNum/100)
+    const percentNums = (val) => {
+        return firstNum * (val/100)
     }
 
     ////////////////////////
@@ -35,7 +35,7 @@ export default function CalculatorGadget() {
     }
 
     const handleSetFirstNum = (val) => {
-        setFirstNum(Number(displayValue))
+        setFirstNum(() => Number(displayValue))
         setOperator(val)
         setDisplayValue('')
     }
@@ -46,23 +46,41 @@ export default function CalculatorGadget() {
     }
 
     const handleCalculate = () => {
-
-        setSecondNum(() => Number(displayValue))
-
         if (operator === '+') {
-            setDisplayValue(() => firstNum + secondNum)
+            return(firstNum + secondNum)
         } else if (operator === '-') {
-            setDisplayValue(() => firstNum - secondNum)
+            return(firstNum - secondNum)
         } else if (operator === '*') {
-            setDisplayValue(() => firstNum * secondNum)
+            return(firstNum * secondNum)
         } else if (operator === '/') {
-            setDisplayValue(() => firstNum / secondNum)
+            return(firstNum / secondNum)
         } else if (operator === '%') {
-            setDisplayValue(percentNums())
+            return(percentNums())
         }
     }
 
+    const handleEquals = () => {
+        const newSecondNum = Number(displayValue)
+        setSecondNum(newSecondNum)
+        setDisplayValue((displayValue) => {
+            if (operator === '+') {
+                return(firstNum + newSecondNum)
+            } else if (operator === '-') {
+                return(firstNum - newSecondNum)
+            } else if (operator === '*') {
+                return(firstNum * newSecondNum)
+            } else if (operator === '/') {
+                return(firstNum / newSecondNum)
+            } else if (operator === '%') {
+                return(percentNums(newSecondNum))
+            }
+        })
+    }
+
+    console.log('displayValue: ' + displayValue)
     console.log('operator state: ' + operator)
+    console.log('first: ' + firstNum)
+    console.log('second: ' + secondNum)
 
     return(
         <div className='routeContent'>
@@ -77,7 +95,7 @@ export default function CalculatorGadget() {
                 handleSetFirstNum={handleSetFirstNum}
                 handleClearDisplayValue={handleClearDisplayValue}
                 handleSetOperator={handleSetOperator}
-                handleCalculate={handleCalculate}
+                handleEquals={handleEquals}
                 displayValue={displayValue}/>
         </div>
     )
