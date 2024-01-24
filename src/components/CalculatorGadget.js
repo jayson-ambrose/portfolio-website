@@ -35,6 +35,12 @@ export default function CalculatorGadget() {
     }
 
     const handleSetFirstNum = (val) => {
+
+        if(firstNum) {
+            setSecondNum(() => Number(displayValue))
+            handleEquals()
+        }
+
         setFirstNum(() => Number(displayValue))
         setOperator(val)
         setDisplayValue('')
@@ -43,20 +49,6 @@ export default function CalculatorGadget() {
     const handleSetOperator = (val) => {
         setOperator(val)
         setDisplayValue(displayValue + operator)
-    }
-
-    const handleCalculate = () => {
-        if (operator === '+') {
-            return(firstNum + secondNum)
-        } else if (operator === '-') {
-            return(firstNum - secondNum)
-        } else if (operator === '*') {
-            return(firstNum * secondNum)
-        } else if (operator === '/') {
-            return(firstNum / secondNum)
-        } else if (operator === '%') {
-            return(percentNums())
-        }
     }
 
     const handleEquals = () => {
@@ -89,7 +81,8 @@ export default function CalculatorGadget() {
                 firstNum={firstNum}
                 secondNum={secondNum}
                 operator={operator}
-                displayValue={displayValue}/>
+                displayValue={displayValue}
+                total={total}/>
             <CalculatorKeypad
                 handleSetDisplayValue={handleSetDisplayValue} 
                 handleSetFirstNum={handleSetFirstNum}
