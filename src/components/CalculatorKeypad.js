@@ -1,14 +1,15 @@
 import React from "react";
 import { Grid, GridRow, GridColumn, Button } from "semantic-ui-react";
 import CalculatorButton from "./CalculatorButton";
+import { getByDisplayValue } from "@testing-library/react";
 
 export default function CalculatorKeypad ({ 
     handleSetFirstNum,
-    displayValue, 
     handleSetDisplayValue,
     handleClearDisplayValue,
-    handleSetOperator,
-    handleEquals}) {
+    handleEquals,
+    handleBackspace,
+    displayValue}) {
 
     const handleButtonClicked = (btnVal) => {
 
@@ -18,14 +19,13 @@ export default function CalculatorKeypad ({
             case '*':
             case '/':
             case '%':
-                //set first num and operator in state using display state.
                 handleSetFirstNum(btnVal)
                 break
             case '.' :
-                decimalSelected()
+                handleSetDisplayValue(btnVal)
                 break
             case 'bk' :
-                backspaceSelected()
+                handleBackspace(getByDisplayValue)
                 break
             case 'clr' :                
                 handleClearDisplayValue()
@@ -41,25 +41,6 @@ export default function CalculatorKeypad ({
                 //adds number to display value
                 handleSetDisplayValue(btnVal)
         }
-    }
-
-    const decimalSelected = () => {
-        console.log('decimal point detected')
-        //check if decimal present using display val then add one if not.
-    }
-
-    const backspaceSelected = () => {
-        console.log('backspace detected')
-        //pop the last number or decimal from the display value.
-        //if empty and on secondNum, remove operator and switch display back to firstNum
-    }
-
-    const equalsSelected = () => {
-        console.log('equals detected')
-        //solve
-        //if no secondNum entered, insert 0 and solve
-        //if no operator senterred, insert + 0 and solve
-        //if divide by 0 return ERROR
     }
 
     return (
