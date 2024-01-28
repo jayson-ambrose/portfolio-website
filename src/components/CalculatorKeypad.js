@@ -42,7 +42,8 @@ export default function CalculatorKeypad ({
                 handleSetDisplayValue(btnVal)
         }
     }
-
+    
+    
     return (
         <Grid className="calculatorGrid">
             <GridRow>

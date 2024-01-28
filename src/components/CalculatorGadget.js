@@ -10,6 +10,7 @@ export default function CalculatorGadget() {
     const [secondNum, setSecondNum] = useState('')
     const [operator, setOperator] = useState('')
 
+
     const percentNums = (val) => {
         return firstNum * (val/100)
     }
@@ -41,6 +42,7 @@ export default function CalculatorGadget() {
         setOperator(val)
         setDisplayValue(displayValue + operator)
     }
+
 
     const handleBackspace = (val) => {
         // setDisplayValue((displayValue) => {
