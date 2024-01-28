@@ -59,6 +59,7 @@ export default function CalculatorKeypad ({
 
     const equalsSelected = () => {
         console.log('equals detected')
+        handleCalculate()
         //solve
         //if no secondNum entered, insert 0 and solve
         //if no operator senterred, insert + 0 and solve

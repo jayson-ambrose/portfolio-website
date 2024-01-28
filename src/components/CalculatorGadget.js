@@ -13,10 +13,10 @@ export default function CalculatorGadget() {
 
     //JavaScript Number() method for these
 
-    const addNums = () => setTotal(firstNum + secondNum)
-    const subtractNums = () => setTotal(firstNum - secondNum)
-    const multiplyNums = () => setTotal(firstNum * secondNum)
-    const divideNums = () => setTotal(firstNum / secondNum)
+    const addNums = () => setDisplayValue(firstNum + secondNum)
+    const subtractNums = () => setDisplayValue(firstNum - secondNum)
+    const multiplyNums = () => setDisplayValue(firstNum * secondNum)
+    const divideNums = () => setDisplayValue(firstNum / secondNum)
     const percentNums = () => {
         return firstNum * (secondNum/100)
     }
@@ -51,6 +51,8 @@ export default function CalculatorGadget() {
 
     const handleCalculate = () => {
 
+        handleSetSecondNum(displayValue)
+
         if (operator === '+') {
             addNums()
         } else if (operator === '-') {
@@ -62,8 +64,6 @@ export default function CalculatorGadget() {
         } else if (operator === '%') {
             percentNums()
         }
-
-        handleSetDisplayValue()
     }
 
     console.log('operator state: ' + operator)
