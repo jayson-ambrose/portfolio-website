@@ -9,19 +9,11 @@ export default function CalculatorGadget() {
     const [firstNum, setFirstNum] = useState('')
     const [secondNum, setSecondNum] = useState('')
     const [operator, setOperator] = useState('')
-    const [total, setTotal] = useState(0)
 
-    //JavaScript Number() method for these
 
-    const addNums = () => setDisplayValue(firstNum + secondNum)
-    const subtractNums = () => setDisplayValue(firstNum - secondNum)
-    const multiplyNums = () => setDisplayValue(firstNum * secondNum)
-    const divideNums = () => setDisplayValue(firstNum / secondNum)
-    const percentNums = () => {
-        return firstNum * (secondNum/100)
+    const percentNums = (val) => {
+        return firstNum * (val/100)
     }
-
-    ////////////////////////
 
     const handleClearDisplayValue = (val) => {
         setDisplayValue('')
@@ -35,13 +27,15 @@ export default function CalculatorGadget() {
     }
 
     const handleSetFirstNum = (val) => {
-        setFirstNum(displayValue)
+
+        if(firstNum) {
+            setSecondNum(() => Number(displayValue))
+            handleEquals()
+        }
+
+        setFirstNum(() => Number(displayValue))
         setOperator(val)
         setDisplayValue('')
-    }
-
-    const handleSetSecondNum = (val) => {
-        setSecondNum(val)
     }
 
     const handleSetOperator = (val) => {
@@ -49,24 +43,33 @@ export default function CalculatorGadget() {
         setDisplayValue(displayValue + operator)
     }
 
-    const handleCalculate = () => {
 
-        handleSetSecondNum(displayValue)
-
-        if (operator === '+') {
-            addNums()
-        } else if (operator === '-') {
-            subtractNums()
-        } else if (operator === '*') {
-            multiplyNums()
-        } else if (operator === '/') {
-            divideNums()
-        } else if (operator === '%') {
-            percentNums()
-        }
+    const handleBackspace = (val) => {
+        // setDisplayValue((displayValue) => {
+        //     val.substring(0, val.length-1)
+        // })
+        console.log('backspace detected')
     }
 
-    console.log('operator state: ' + operator)
+    const handleEquals = () => {
+        const newSecondNum = Number(displayValue)
+        setSecondNum(newSecondNum)
+        setDisplayValue((displayValue) => {
+            if (operator === '+') {
+                return(firstNum + newSecondNum).toString()
+            } else if (operator === '-') {
+                return(firstNum - newSecondNum).toString()
+            } else if (operator === '*') {
+                return(firstNum * newSecondNum).toString()
+            } else if (operator === '/') {
+                return(firstNum / newSecondNum).toString()
+            } else if (operator === '%') {
+                return(percentNums(newSecondNum).toString())
+            }
+        })
+    }
+
+    console.log('displayValue: ' + displayValue)
 
     return(
         <div className='routeContent'>
@@ -79,10 +82,10 @@ export default function CalculatorGadget() {
             <CalculatorKeypad
                 handleSetDisplayValue={handleSetDisplayValue} 
                 handleSetFirstNum={handleSetFirstNum}
-                handleSetSecondNum={handleSetSecondNum}
                 handleClearDisplayValue={handleClearDisplayValue}
                 handleSetOperator={handleSetOperator}
-                handleCalculate={handleCalculate}
+                handleEquals={handleEquals}
+                handleBackspace={handleBackspace}
                 displayValue={displayValue}/>
         </div>
     )

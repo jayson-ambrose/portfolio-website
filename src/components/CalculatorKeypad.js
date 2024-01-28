@@ -1,15 +1,15 @@
 import React from "react";
 import { Grid, GridRow, GridColumn, Button } from "semantic-ui-react";
 import CalculatorButton from "./CalculatorButton";
+import { getByDisplayValue } from "@testing-library/react";
 
 export default function CalculatorKeypad ({ 
-    handleSetFirstNum, 
-    handleSetSecondNum, 
-    displayValue, 
+    handleSetFirstNum,
     handleSetDisplayValue,
     handleClearDisplayValue,
-    handleSetOperator,
-    handleCalculate}) {
+    handleEquals,
+    handleBackspace,
+    displayValue}) {
 
     const handleButtonClicked = (btnVal) => {
 
@@ -19,53 +19,31 @@ export default function CalculatorKeypad ({
             case '*':
             case '/':
             case '%':
-                operatorSelected(btnVal)
+                handleSetFirstNum(btnVal)
                 break
             case '.' :
-                decimalSelected()
+                handleSetDisplayValue(btnVal)
                 break
             case 'bk' :
-                backspaceSelected()
+                handleBackspace(getByDisplayValue)
                 break
             case 'clr' :                
                 handleClearDisplayValue()
                 break
             case '=' :
-                equalsSelected()
+                handleEquals()
+                //solve
+                //if no secondNum entered, insert 0 and solve
+                //if no operator senterred, insert + 0 and solve
+                //if divide by 0 return ERROR
                 break           
             default :
                 //adds number to display value
                 handleSetDisplayValue(btnVal)
         }
     }
-
-    const operatorSelected = (btnVal) => {
-        console.log(`operator ${btnVal} detected`)
-
-        handleSetFirstNum(btnVal)
-        //set first num and operator in state using display state.
-    }
-
-    const decimalSelected = () => {
-        console.log('decimal point detected')
-        //check if decimal present using display val then add one if not.
-    }
-
-    const backspaceSelected = () => {
-        console.log('backspace detected')
-        //pop the last number or decimal from the display value.
-        //if empty and on secondNum, remove operator and switch display back to firstNum
-    }
-
-    const equalsSelected = () => {
-        console.log('equals detected')
-        handleCalculate()
-        //solve
-        //if no secondNum entered, insert 0 and solve
-        //if no operator senterred, insert + 0 and solve
-        //if divide by 0 return ERROR
-    }
-
+    
+    
     return (
         <Grid className="calculatorGrid">
             <GridRow>
