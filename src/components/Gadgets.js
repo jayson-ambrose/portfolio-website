@@ -5,7 +5,7 @@ export default function Gadgets() {
 
     return(
         <div >
-            <h1>Under Construction</h1>                    
+            <h2>Under Construction</h2>                    
         </div>
     )
 }

@@ -8,20 +8,14 @@ function Nav () {
     const [menuSelection, setMenuSelection] = useState({activeItem: ''})
 
     useEffect(() => {
-
-        console.log(location.pathname)
         setMenuSelection({activeItem: location.pathname})
     }, [])
 
     const handleItemClick = (e, { name }) => setMenuSelection({ activeItem: name })
     const { activeItem } = menuSelection
 
-    console.log(menuSelection)
-
-
-
     return(
-        <Menu className='nav' color='blue' widths={4}>
+        <Menu pointing secondary className='nav' color='blue' widths={4}>
             <Menu.Item
                 as={ Link }
                 to='/'
