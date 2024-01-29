@@ -1,21 +1,32 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Menu } from 'semantic-ui-react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 function Nav () {
 
-    const [menuSelection, setMenuSelection] = useState({})
+    const location = useLocation()
+    const [menuSelection, setMenuSelection] = useState({activeItem: ''})
+
+    useEffect(() => {
+
+        console.log(location.pathname)
+        setMenuSelection({activeItem: location.pathname})
+    }, [])
 
     const handleItemClick = (e, { name }) => setMenuSelection({ activeItem: name })
     const { activeItem } = menuSelection
 
+    console.log(menuSelection)
+
+
+
     return(
-        <Menu className='nav' inverted color='blue' widths={4}>
+        <Menu className='nav' color='blue' widths={4}>
             <Menu.Item
                 as={ Link }
                 to='/'
-                name='welcome'
-                active={activeItem === 'welcome'}
+                name='/'
+                active={activeItem === '/'}
                 onClick={handleItemClick}
             >
                 <b>Welcome</b>
@@ -23,26 +34,26 @@ function Nav () {
             <Menu.Item
                 as={ Link }
                 to='/projects'
-                name='projects'
-                active={activeItem === 'projects'}
+                name='/projects'
+                active={activeItem === '/projects'}
                 onClick={handleItemClick}
             >
                 <b>Projects</b>
             </Menu.Item>
             <Menu.Item
-                name='contact'
                 as={ Link }
                 to='/contact'
-                active={activeItem === 'contact'}
+                name='/contact'
+                active={activeItem === '/contact'}
                 onClick={handleItemClick}
             >
                 <b>Contact Me</b>
             </Menu.Item>
             <Menu.Item
-                name='gadgets'
                 as={ Link }
                 to='/gadgets'
-                active={activeItem === 'gadgets'}
+                name='/gadgets'
+                active={activeItem === '/gadgets'}
                 onClick={handleItemClick}
             >
                 <b>Gadgets</b>
