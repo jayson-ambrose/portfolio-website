@@ -13,7 +13,7 @@ function Nav () {
         <Menu className='nav' inverted color='blue' widths={4}>
             <Menu.Item
                 as={ Link }
-                to='/welcome'
+                to='/'
                 name='welcome'
                 active={activeItem === 'welcome'}
                 onClick={handleItemClick}
