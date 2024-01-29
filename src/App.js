@@ -10,29 +10,33 @@ import CalculatorGadget from './components/CalculatorGadget';
 import TriviaGadget from './components/TriviaGadget';
 import BreweryGadget from './components/BreweryGadget';
 import ClockGadget from './components/ClockGadget';
+import { Grid, GridColumn, GridRow } from 'semantic-ui-react';
 
 function App() {
 
   const navigate = useNavigate()
 
-  useEffect(() => {
-    navigate('/welcome')
-  }, [])
-
   return (
-    <div className="mainContainer">
-      <h2 className='headLine'>Jayson Ambrose, Full-Stack Software Engineer</h2>
-      <Nav />
-      <Routes>
-        <Route path='/' element={null}/>
-        <Route path='/welcome' element={<Welcome/>}/>
-        <Route path='/projects' element={<Projects/>}/>
-        <Route path='/contact' element={<ContactMe/>}/>
-        <Route path='/gadgets/*' element={<Gadgets/>}>
-          
-        </Route>
-      </Routes>      
-    </div>
+    <Grid>
+      <GridRow>
+        <GridColumn textAlign='center'>
+         <h2>Jayson Ambrose, Full-Stack Software Engineer</h2> 
+        </GridColumn>
+      </GridRow>
+      <GridRow>
+        <Nav />
+      </GridRow>
+      <GridRow>
+        <GridColumn textAlign='center'>
+          <Routes>
+            <Route exact path='/' element={<Welcome/>}/>
+            <Route path='/projects' element={<Projects/>}/>
+            <Route path='/contact' element={<ContactMe/>}/>
+            <Route path='/gadgets/*' element={<Gadgets/>}/>
+          </Routes>
+        </GridColumn> 
+      </GridRow>    
+    </Grid>
   );
 }
 
