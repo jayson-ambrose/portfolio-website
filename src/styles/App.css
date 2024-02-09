@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Zilla+Slab:wght@300;700&display=swap');
 
-html * {
-  font-family: 'Zilla Slab, serif' !important;
+
+body {
+  font-size: medium;
+}
+
+h2 {
+  font-family: "protest-strike-regular", sans-serif ;
+}
+
+.makeMeBlue {
+  background-color: rgb(14, 14, 41);
+  color: white;
+}
+
+.ui.menu {
+  background: transparent;
 }
