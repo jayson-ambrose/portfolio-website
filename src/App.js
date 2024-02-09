@@ -1,4 +1,3 @@
-import './styles/App.css';
 import React, {useEffect} from 'react'
 import Nav from './components/Nav';
 import { Routes, Route, useNavigate} from 'react-router-dom'
@@ -18,12 +17,12 @@ function App() {
 
   return (
     <Grid>
-      <GridRow>
+      <GridRow className='makeMeBlue'>
         <GridColumn textAlign='center'>
          <h2>Jayson Ambrose, Full-Stack Software Engineer</h2> 
         </GridColumn>
-      </GridRow>
-      <GridRow>
+      </GridRow >
+      <GridRow className='makeMeBlue'> 
         <Nav />
       </GridRow>
       <GridRow>

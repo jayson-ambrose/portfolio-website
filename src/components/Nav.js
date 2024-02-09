@@ -15,7 +15,7 @@ function Nav () {
     const { activeItem } = menuSelection
 
     return(
-        <Menu pointing secondary className='nav' color='blue' widths={4}>
+        <Menu inverted pointing secondary className='nav' widths={4}>
             <Menu.Item
                 as={ Link }
                 to='/'
