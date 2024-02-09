@@ -11,10 +11,21 @@ h2 {
 }
 
 .makeMeBlue {
-  background-color: rgb(14, 14, 41);
+  background-color: rgb(18, 18, 54);
   color: white;
 }
 
 .ui.menu {
   background: transparent;
+}
+
+h2.namePlate {
+  margin-top: 25px;
+  margin-bottom: 0px;
+  font-size: 35px;
+}
+
+h2.titlePlate {
+  margin-top: 1px;
+  font-size: 20px;
 }

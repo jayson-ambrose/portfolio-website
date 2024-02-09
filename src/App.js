@@ -19,7 +19,8 @@ function App() {
     <Grid>
       <GridRow className='makeMeBlue'>
         <GridColumn textAlign='center'>
-         <h2>Jayson Ambrose, Full-Stack Software Engineer</h2> 
+         <h2 className='namePlate'>Jayson Ambrose</h2>
+         <h2 className='titlePlate'>Full-Stack Software Engineer</h2> 
         </GridColumn>
       </GridRow >
       <GridRow className='makeMeBlue'> 
